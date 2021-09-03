@@ -21,7 +21,7 @@ namespace Eisk.WebApi
         public Startup(IHostingEnvironment env, IConfiguration configuration)
         {
             Configuration = configuration;
-
+            // this is my code
             DbContextDataInitializer.Initialize(new InMemoryDbContext());
         }
 
@@ -92,3 +92,4 @@ namespace Eisk.WebApi
         }
     }
 }
+
