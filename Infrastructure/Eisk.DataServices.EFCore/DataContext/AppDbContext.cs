@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Eisk.Domains.Employee;
+using Microsoft.EntityFrameworkCore;
 
 namespace Eisk.DataServices.EFCore.DataContext
 {
@@ -11,6 +12,7 @@ namespace Eisk.DataServices.EFCore.DataContext
         }
 
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<EmployeeTimeSheet> EmployeeTimeSheets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
