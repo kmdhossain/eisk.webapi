@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace Eisk.DomainServices
@@ -19,6 +20,14 @@ namespace Eisk.DomainServices
         {
             return await _employeeDataService.GetByFirstName(firstName);
         }
+        public override Task<Employee> Add(Employee entity)
+        {
+            return base.Add(entity, CheckBirthdate);
+        }
 
+        private void CheckBirthdate(Employee e){
+          
+            // throw exception
+        }
     }
 }
