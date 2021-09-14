@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Threading.Tasks;
 namespace Eisk.DomainServices
 {
@@ -28,6 +30,8 @@ namespace Eisk.DomainServices
         private void CheckBirthdate(Employee e){
           
             // throw exception
+            //throw new InvalidOperationException("Test");
+            //throw  new InvalidDataException()
         }
     }
 }

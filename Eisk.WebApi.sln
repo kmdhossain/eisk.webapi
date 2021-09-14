@@ -27,6 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eisk.DataServices.EFCore", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eisk.DomainServices.ComponentTests.EFCore", "Infrastructure\Eisk.DomainServices.ComponentTests.EFCore\Eisk.DomainServices.ComponentTests.EFCore.csproj", "{927DF350-D0DA-410B-86F1-10A6EE30D15C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A66B4D97-FBC2-409C-92A5-77AB0EC90637}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

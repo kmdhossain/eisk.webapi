@@ -13,7 +13,7 @@ namespace Eisk.DataServices.EFCore.DataContext
 
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<EmployeeTimeSheet> EmployeeTimeSheets { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

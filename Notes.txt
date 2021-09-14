@@ -1,0 +1,15 @@
+* Create Domain, Data services for product
+* Apply validation, if product is online type, price shouldn't be more than 50 dollar
+* Test cases
+	Positive tests
+	* product is not online, price is more than 50
+	* product is not online, price is less than 50
+	* product is online and price is less than 50
+	Negative tests
+	* product is online and price is more than 50
+	Boundary tests
+	* product is not online and price is equal to 50, should not throw exception (positive test)
+	* product is online and price is equal to 50, should not throw exception (positive test)
+	* product is online and price is more than 50 (int.max) (negative tests)
+	* product is online and price is equal to 0 (negative tests)
+	
