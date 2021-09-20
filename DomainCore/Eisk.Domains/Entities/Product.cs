@@ -17,6 +17,8 @@ namespace Eisk.Domains.Entities
         public string ProductCost { get; set; }
         public string ProductType { get; set; }
         public string ProductStatus { get; set; }
+        public bool IsOnline { get; set; }
+        public float ProductPrice { get; set; }
 
     }
 }
