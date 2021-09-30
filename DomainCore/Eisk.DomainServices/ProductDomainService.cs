@@ -10,6 +10,7 @@ namespace Eisk.DomainServices
     using Core.DomainService;
     using DataServices.Interfaces;
     using Domains.Entities;
+    using Eisk.Core.Exceptions;
 
     public class ProductDomainService : DomainService<Product, int>
     {
@@ -32,6 +33,9 @@ namespace Eisk.DomainServices
 
         private static void ProductOnlineValidate(Product e)
         {
+            if (e.ProductPrice <= 0)
+                throw new DomainException<Product>();
+
             if (e.IsOnline && e.ProductPrice > 50)
                 throw new InvalidOperationException("Invlid price range.");
         }
