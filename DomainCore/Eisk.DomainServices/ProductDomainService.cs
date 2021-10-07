@@ -15,12 +15,14 @@ namespace Eisk.DomainServices
     public class ProductDomainService : DomainService<Product, int>
     {
         private readonly IProductDataService _productDataService;
-        
+       // private DataServices.EFCore.EmployeeDataService employeeDataService;
+
         public ProductDomainService(IProductDataService productDataService) : base(productDataService)
         {
             _productDataService = productDataService;
         }
 
+        
         public virtual async Task<IList<Product>> GetByProductName(string productName)
         {
             return await _productDataService.GetByProductName(productName);
@@ -38,6 +40,7 @@ namespace Eisk.DomainServices
 
             if (e.IsOnline && e.ProductPrice > 50)
                 throw new InvalidOperationException("Invlid price range.");
+            
         }
     }
 }
