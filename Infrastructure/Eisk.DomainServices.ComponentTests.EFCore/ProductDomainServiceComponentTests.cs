@@ -19,6 +19,7 @@ namespace Eisk.DomainServices.ComponentTests.EFCore
 
             return productDataService;
         }
+
         [Fact]
         public virtual async Task ProductAdd_IsOnlineAnd_WhenProductValueIsMoreThan50_ShouldThrowException()
         {
@@ -36,6 +37,21 @@ namespace Eisk.DomainServices.ComponentTests.EFCore
               productDomainService.Add(inputProduct)
                 );
         }
+        [Fact]
 
+        public virtual async Task ProductAdd_IsOnlineAndProductValueIsZero_ShouldThrowException()
+        {
+            //Arrange
+            var inputProduct = Factory_Entity<Product>();
+            inputProduct.IsOnline = true;
+            const int PRODUCT_PRICE_IS_LESS_THAN_ZERO = 0;
+            inputProduct.ProductPrice = PRODUCT_PRICE_IS_LESS_THAN_ZERO;
+            var productDomainService = new ProductDomainService(Factory_DataService());
+            //Act +Assert
+            await Assert.ThrowsAsync<DomainException<Product>>(() =>
+            productDomainService.Add(inputProduct)
+            );
+
+        }
     }
 }
