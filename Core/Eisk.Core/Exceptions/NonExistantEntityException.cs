@@ -1,6 +1,6 @@
 ﻿namespace Eisk.Core.Exceptions
 {
-    public class NonExistantEntityException<TEntity> : InvalidDataException<TEntity>
+    public class NonExistantEntityException<TEntity> : InvalidOperationException<TEntity>
 
     {
         public NonExistantEntityException(object paramValue, string paramName = "id") : base(

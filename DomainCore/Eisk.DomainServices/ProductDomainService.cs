@@ -36,7 +36,7 @@ namespace Eisk.DomainServices
         private static void ProductOnlineValidate(Product e)
         {
             if (e.ProductPrice <= 0)
-                throw new InvalidDataException<Product>();
+                throw new InvalidOperationException<Product>();
 
             if (e.IsOnline && e.ProductPrice > 50)
                 throw new InvalidOperationException("Invlid price range.");

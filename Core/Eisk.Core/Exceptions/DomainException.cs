@@ -1,8 +1,8 @@
 ﻿namespace Eisk.Core.Exceptions
 {
-    public class InvalidDataException<TEntity>: CoreException
+    public class InvalidOperationException<TEntity>: CoreException
     {
-        public InvalidDataException(string message = null, string errorCode = null) : base(message, errorCode)
+        public InvalidOperationException(string message = null, string errorCode = null) : base(message, errorCode)
         {
 
         }

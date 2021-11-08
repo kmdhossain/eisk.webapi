@@ -1,6 +1,6 @@
 ﻿namespace Eisk.Core.Exceptions
 {
-    public class UpdatingIdIsNotSupported<TEntity>: InvalidDataException<TEntity>
+    public class UpdatingIdIsNotSupported<TEntity>: InvalidOperationException<TEntity>
 
     {
         public UpdatingIdIsNotSupported(object paramValue, string paramName = "id") : base(
