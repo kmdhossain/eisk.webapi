@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainCore", "DomainCore", "{EBB00523-AA34-473E-869F-F21A1FF49E4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AB873FBC-C5FF-4186-9C40-1B07B5869061}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\Eisk.DomainServices.ComponentTests.EFCore\EmployeeDomainServiceCustomComponentTests.cs = Infrastructure\Eisk.DomainServices.ComponentTests.EFCore\EmployeeDomainServiceCustomComponentTests.cs
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eisk.Core", "Core\Eisk.Core\Eisk.Core.csproj", "{DD9E265E-D7AF-4CBD-8316-707608C35920}"
 EndProject

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Eisk.Domains.Entities
 {
-    [Table("Product List")]
+    [Table("Products")]
     public class Product
     {
         [Key]
@@ -14,11 +14,11 @@ namespace Eisk.Domains.Entities
 
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public string ProductCost { get; set; }
+        public double ProductCost { get; set; }
         public string ProductType { get; set; }
         public string ProductStatus { get; set; }
         public bool IsOnline { get; set; }
-        public float ProductPrice { get; set; }
+        public double ProductPrice { get; set; }
 
     }
 }
