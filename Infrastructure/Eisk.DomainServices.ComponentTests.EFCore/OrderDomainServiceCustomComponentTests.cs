@@ -88,5 +88,41 @@ namespace Eisk.DomainServices.ComponentTests.EFCore
                 Assert.Equal(expectedOrderTotal, actualOrder.OrderCalculatedTotal);
             }
         }
+
+        [Fact]
+        public virtual async Task Add_OrderWithAboveTwoHundredDiscountPr_ShouldCalculateValueCorrectly()
+        {
+            {
+                // Arrange
+                var order = new Order();
+                order.OrderItems = new List<OrderItem>();
+
+                var product1 = new Product
+                {
+                    ProductId = 3,
+                    IsOnline = true,
+                    ProductCost = 150,
+                    ProductPrice = 300,
+                    ProductName = "Mango Juice"
+                };
+                var orderItem1 = new OrderItem
+                {
+                    OrderItemId = 103,
+                    OrderItemProduct = product1
+                };
+
+                order.OrderItems.Add(orderItem1);
+
+                OrderDomainService orderDomainService = new OrderDomainService(Factory_DataService());
+
+                var expectedOrderTotal = 240;
+
+                //Act
+                var actualOrder = await orderDomainService.Add(order);
+
+                //Assert
+                Assert.Equal(expectedOrderTotal, actualOrder.OrderCalculatedTotal);
+            }
+        }
     }
 }
