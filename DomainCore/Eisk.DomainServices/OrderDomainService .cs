@@ -35,7 +35,7 @@ namespace Eisk.DomainServices
 
         private static void ApplyOrderBusinessRule(Order e)
         {
-            e.OrderCalculatedTotal = 20;
+            e.OrderCalculatedTotal = 0;
             foreach (var orderItem in e.OrderItems)
                 e.OrderCalculatedTotal += orderItem.OrderItemProduct.ProductPrice;
 

@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Eisk.DomainServices.ComponentTests.EFCore
 {
-    public class OrderDomainServiceCustomComponentTests:TestBase
+    public class OrderDomainServiceCustomComponentTests : TestBase
     {
         static OrderDataService Factory_DataService()
         {
@@ -31,6 +31,7 @@ namespace Eisk.DomainServices.ComponentTests.EFCore
                 ProductId = 1,
                 IsOnline = true,
                 ProductCost = 20,
+                ProductPrice=25,
                 ProductName = "Mango Juice"
             };
             var orderItem1 = new OrderItem
@@ -43,7 +44,7 @@ namespace Eisk.DomainServices.ComponentTests.EFCore
 
             OrderDomainService orderDomainService = new OrderDomainService(Factory_DataService());
 
-            var expectedOrderTotal = 20;
+            var expectedOrderTotal = 25;
 
             //Act
             var actualOrder = await orderDomainService.Add(order);
@@ -52,5 +53,40 @@ namespace Eisk.DomainServices.ComponentTests.EFCore
             Assert.Equal(expectedOrderTotal, actualOrder.OrderCalculatedTotal);
         }
 
+        [Fact]
+        public virtual async Task Add_OrderWithBoundaryDiscountPr_ShouldCalculateValueCorrectly()
+        {
+            {
+                // Arrange
+                var order = new Order();
+                order.OrderItems = new List<OrderItem>();
+
+                var product1 = new Product
+                {
+                    ProductId = 2,
+                    IsOnline = true,
+                    ProductCost = 20,
+                    ProductPrice=200,
+                    ProductName = "Mango Juice"
+                };
+                var orderItem1 = new OrderItem
+                {
+                    OrderItemId = 101,
+                    OrderItemProduct = product1
+                };
+
+                order.OrderItems.Add(orderItem1);
+
+                OrderDomainService orderDomainService = new OrderDomainService(Factory_DataService());
+
+                var expectedOrderTotal = 160;
+
+                //Act
+                var actualOrder = await orderDomainService.Add(order);
+
+                //Assert
+                Assert.Equal(expectedOrderTotal, actualOrder.OrderCalculatedTotal);
+            }
+        }
     }
 }
