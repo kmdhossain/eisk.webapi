@@ -1,5 +1,7 @@
 =======================================================
 * Order total with 200 or more will get 10% discount
+* Add quantity in order items and calculate the total based on quantity and price
+* Apply Online order item should be less than 50 rule when adding an order
 =======================================================
 
 * Create Domain, Data services for product
