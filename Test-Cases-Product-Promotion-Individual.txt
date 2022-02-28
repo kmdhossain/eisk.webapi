@@ -1,0 +1,16 @@
+=======================================================
+Product Promotion (Based on individual product)
+
+* Some individual products can have discounted rate when purchased certain quantities.
+* Example: 
+    * Product A price 50 for quantity 1,
+    * Product A price 130 for quantity 3,
+    * Product A price 220 for quantity 5.
+  Calcualted cases:  .
+    * Product A price 180 for quantity 4 (130 (for 3) + 50 (for 1)),
+    * Product A price 310 for quantity 7 (130 (for 3) + 130 (for 3) + 50 (for 1)),
+    * Product A price 350 for quantity 8 (130 (for 3) + 220 (for 5))
+=======================================================
+Test Cases:
+* 
+=======================================================

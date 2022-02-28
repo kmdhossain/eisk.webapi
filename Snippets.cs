@@ -1,30 +1,4 @@
-=======================================================
-* Order total with 200 or more will get 10% discount
-* Add quantity in order items and calculate the total based on quantity and price
-* Apply Online order item should be less than 50 rule when adding an order
-=======================================================
-
-* Create Domain, Data services for product
-* Apply validation, 
-	* The bank is no permitting online payment more than 50 dollar per transaction for small business as part of regulation
-	* if product is online type, price shouldn't be more than 50 dollar
-* Test cases
-	Positive tests
-	* product is not online, price is more than 50
-	* product is not online, price is less than 50
-	* product is online and price is less than 50
-	Positive tests (boundary)
-	* product is not online and price is equal to 50, should not throw exception (positive test)
-	* product is online and price is equal to 50, should not throw exception (positive test)
-	Negative tests
-	* product is online and price is less than 0 (negative tests)
-	* product is online and price is more than 50
-	Negative tests (boundary)
-	* product is online and price is more than 50 (int.max) (negative tests)
-	* product is online and price is equal to 0 (negative tests)
-	
-
-	 [Fact]
+	    [Fact]
         public virtual async Task Add_ValidProductID_ShouldReturnProductAfterCreation()
         {
             //Arrange
@@ -81,8 +55,7 @@
         }
 
 
-		// 19.10.21
-		        [Fact]
+		[Fact]
         public virtual async Task ProductAdd_IsOnlineAnd_WhenProductValueIsMoreThan50_ShouldThrowException()
         {
 
@@ -185,11 +158,11 @@
             Assert.NotEqual(default(int), returnProduct.ProductId);
 
         }
+
         //<summary>
         //Negative test (boundary):  product is online and price is more than 50 (int.max) (negative tests)
         //</summary>
         [Fact]
-
         public virtual async Task ProductAdd_IsOnline_PriceIsMoreThan_50()
         {
             var inputProduct = Factory_Entity<Product>();
@@ -202,6 +175,5 @@
             await Assert.ThrowsAsync<InvalidOperationException>(() =>
             productDomainService.Add(inputProduct)
             );
-
 
         }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5C899B87-C8F5-4175-8D58-8EBBD0DAF2D6}"
 EndProject
@@ -32,7 +32,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eisk.DomainServices.Compone
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A66B4D97-FBC2-409C-92A5-77AB0EC90637}"
 	ProjectSection(SolutionItems) = preProject
-		Notes.txt = Notes.txt
+		Business-Rules.txt = Business-Rules.txt
+		Snippets.cs = Snippets.cs
+		Test-Cases-Online-Order.txt = Test-Cases-Online-Order.txt
+		Test-Cases-Order-Total.txt = Test-Cases-Order-Total.txt
+		Test-Cases-Product-Promotion-Individual.txt = Test-Cases-Product-Promotion-Individual.txt
 	EndProjectSection
 EndProject
 Global

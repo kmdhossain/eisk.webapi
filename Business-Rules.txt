@@ -1,0 +1,5 @@
+=======================================================
+Feature
+
+* Add quantity in order items and calculate the total based on quantity and price
+=======================================================

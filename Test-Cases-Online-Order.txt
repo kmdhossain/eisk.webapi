@@ -1,0 +1,26 @@
+=======================================================
+Test Cases
+=======================================================
+* Create Domain, Data services for product
+* Apply validation, 
+	* The bank is no permitting online payment more than 50 dollar per transaction for small business as part of regulation
+	* if product is online type, price shouldn't be more than 50 dollar
+	* Apply Online order item should be less than 50 rule when adding an order
+=======================================================
+* Test cases
+	Positive tests
+	* product is not online, price is more than 50
+	* product is not online, price is less than 50
+	* product is online and price is less than 50
+	Positive tests (boundary)
+	* product is not online and price is equal to 50, should not throw exception (positive test)
+	* product is online and price is equal to 50, should not throw exception (positive test)
+	Negative tests
+	* product is online and price is less than 0 (negative tests)
+	* product is online and price is more than 50
+	Negative tests (boundary)
+	* product is online and price is more than 50 (int.max) (negative tests)
+	* product is online and price is equal to 0 (negative tests)
+
+=======================================================	
+
