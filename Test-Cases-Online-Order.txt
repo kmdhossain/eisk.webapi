@@ -4,8 +4,8 @@ Test Cases
 * Create Domain, Data services for product
 * Apply validation, 
 	* The bank is no permitting online payment more than 50 dollar per transaction for small business as part of regulation
-	* if product is online type, price shouldn't be more than 50 dollar
-	* Apply Online order item should be less than 50 rule when adding an order
+	DONE * if product is online type, price shouldn't be more than 50 dollar
+	DONE * Apply Online order item should be less than 50 rule when adding an order
 =======================================================
 * Test cases
 	Positive tests
